@@ -4,3 +4,13 @@
 [Rajdip_0002]
 1. Added main class under myChat package. It is the pivotal class.
 2. Added myChatTrustStore.jts public key.
+
+[Rajdip_0003]
+1. Created the login branch.
+
+[Rajdip_0004]
+1. Added LoginGUIController.java
+2. Added LoginGUI.java (To be replaced by javafx class later)
+4. Added CredentialNetworkListener.java
+5. Added KeyValues.java
+6. Code can now attempt logins to the server.
