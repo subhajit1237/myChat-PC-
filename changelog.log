@@ -1,2 +1,6 @@
 [Rajdip_0001]
 1. Initial commit
+
+[Rajdip_0002]
+1. Added main class under myChat package. It is the pivotal class.
+2. Added myChatTrustStore.jts public key.
