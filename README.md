@@ -2,7 +2,7 @@
 A socket based chatting application for PCs
 
 # Environment setup-
-1. Directly clone the project to any IDE using IDE specific options.
+1. Directly clone the project to any IDE using IDE specific options. YOu might need to create a new project and clone the repo into that project incase the classpath doesnt show up.
 2. Clone it into some directory if you wish to directly edit it(NOT RECOMMENDED).
 3. JavaSE-16 support is necessary to run this project and shouldn't be altered .
 4. This project uses java-fx support to draw the gui.
