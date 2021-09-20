@@ -49,17 +49,40 @@ public class CredentialNetwork {
                     HashMap<String, Object> m = (HashMap<String, Object>) objectInputStream.readObject();
                     int responseCode = Integer.parseInt(m.get(KeyValues.KEY_RESPONSE_CODE).toString());
                     if (responseCode == KeyValues.RESPONSE_CODE_FAILURE)
-                        networkListener.onErrorWhileLogin((String) m.get(KeyValues.KEY_RESPONSE_MESSAGE));
+                        networkListener.onErrorWhileOperation((String) m.get(KeyValues.KEY_RESPONSE_MESSAGE));
                     else if (responseCode == KeyValues.RESPONSE_CODE_SUCCESS) {
-                        networkListener.onSuccessfulLogin("Login successful!");
+                        networkListener.onOperationSuccessful("Login successful!");
                     }
                 }
             }catch (IOException e){
-                networkListener.onErrorWhileLogin("Server down!");
+                networkListener.onErrorWhileOperation("Server down!");
             }catch (ClassNotFoundException e){
-                //System.out.println("Here");
             }
         }).start();
+    }
+    
+    @SuppressWarnings("unchecked")
+    public void attemptSignup(HashMap<String, Object> message) {
+    	new Thread(() -> {
+    		try {
+    			if(connectToCredentialServer()) {
+                	// Write the message to the server
+                    objectOutputStream.writeObject(message);
+                    // Wait for the server to respond
+                    HashMap<String, Object> m = (HashMap<String, Object>) objectInputStream.readObject();
+                    int responseCode = Integer.parseInt(m.get(KeyValues.KEY_RESPONSE_CODE).toString());
+                    if (responseCode == KeyValues.RESPONSE_CODE_FAILURE)
+                        networkListener.onErrorWhileOperation((String) m.get(KeyValues.KEY_RESPONSE_MESSAGE));
+                    else if (responseCode == KeyValues.RESPONSE_CODE_SUCCESS) {
+                        networkListener.onOperationSuccessful("Signup successful!");
+                    }
+    			}
+    		}catch (IOException e) {
+    			networkListener.onErrorWhileOperation("Server down!");
+			}catch (ClassNotFoundException e) {
+				// TODO: handle exception
+			}
+    	}).start();
     }
 
 }

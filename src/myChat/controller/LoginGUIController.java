@@ -5,6 +5,7 @@ import java.util.HashMap;
 import myChat.utils.classes.CredentialNetwork;
 import myChat.utils.classes.KeyValues;
 import myChat.utils.interfaces.CredentialNetworkListener;
+import static myChat.utils.classes.Hash.hashUp;
 
 public class LoginGUIController implements CredentialNetworkListener{
 	
@@ -16,6 +17,7 @@ public class LoginGUIController implements CredentialNetworkListener{
 	
 	public void onLoginClicked(String username, String password) {
 		HashMap<String, Object> message = new HashMap<>();
+		password = hashUp(password);
 		message.put(KeyValues.KEY_QUERY, KeyValues.QUERY_LOGIN_REQUEST);
         message.put(KeyValues.KEY_USERNAME, username);
         message.put(KeyValues.KEY_PASSWORD, password);
@@ -28,12 +30,12 @@ public class LoginGUIController implements CredentialNetworkListener{
 	}
 
 	@Override
-	public void onErrorWhileLogin(String message) {
+	public void onErrorWhileOperation(String message) {
 		System.out.println(message);
 	}
 
 	@Override
-	public void onSuccessfulLogin(String message) {
+	public void onOperationSuccessful(String message) {
 		System.out.println(message);
 	}
 

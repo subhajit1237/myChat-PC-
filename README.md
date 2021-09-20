@@ -22,6 +22,5 @@ A socket based chatting application for PCs
 
 # Commit rules-
 1. changelog.log file exists under the root folder of this project.
-2. For every commit that you make, use the format, git commit -m "<Your_first_name>_<4 digit decimal number starting from 0000 to 9999>". Example - git commit -m "name_0001". The number should be unique an should be in ascending order.
-3. For every commit made, be sure to make an entry in the changelog file with your commit message format as the header and then stating the changes made.
-4. Pulls would be made accordingly.
+2. For every major or minor change, under the version number mention the changes in the changelog.log file.
+3. Pulls would be made accordingly.

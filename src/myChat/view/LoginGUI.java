@@ -15,12 +15,8 @@ public class LoginGUI {
 		username = sc.nextLine();
 		System.out.print("Enter password: ");
 		password = sc.nextLine();
-		handleLoginClick(username, password);
-		sc.close();
-	}
-	
-	public static void handleLoginClick(String username, String password) {
 		new LoginGUIController().onLoginClicked(username, password);
+		sc.close();
 	}
 
 }

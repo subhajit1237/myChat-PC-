@@ -1,17 +1,20 @@
 package myChat.utils.classes;
 
 public class KeyValues {
-	
-	public static final String KEY_QUERY = "query";
-    public static final String KEY_RESPONSE_MESSAGE = "response_message";
+    
+    public static final String KEY_QUERY = "query"; // Key that holds the queries
+    public static final String KEY_RESPONSE_MESSAGE = "response_message"; // Key that holds the response message from the server
     public static final String KEY_USERNAME = "username";
-    public static final String KEY_PASSWORD = "password";
-    public static final String KEY_RESPONSE_CODE = "response_code";
-    public static final String KEY_SENDER = "sender";
-    public static final String KEY_MESSAGE = "message";
+    public static final String KEY_PASSWORD = "password"; 
+    public static final String KEY_FIRST_NAME = "firstname";
+    public static final String KEY_LAST_NAME = "lastname";
+    public static final String KEY_EMAIL = "email";
+    public static final String KEY_RESPONSE_CODE = "response_code"; // Key that holds the response code from the server => SUCCESS/FAILURE
+    public static final String KEY_SENDER = "sender"; // Holds the sender of the message
+    public static final String KEY_MESSAGE = "message"; //Holds the message
 
-    public static final int RESPONSE_CODE_SUCCESS = 1;
-    public static final int RESPONSE_CODE_FAILURE = 2;
+    public static final int RESPONSE_CODE_SUCCESS = 1; // Used when some operation is successful
+    public static final int RESPONSE_CODE_FAILURE = 2; // Used when some operation is successful
 
     public static final int QUERY_SEND_BIO = 7;
     public static final int QUERY_LOGIN_REQUEST = 3;   // Sent from the client to request a login 
